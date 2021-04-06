@@ -31,14 +31,14 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // //// TEST NEW SETTINGS
 
-const cores = os.cpus().filter((cpu, index) => {
-  const hasHyperthreading = cpu.model.includes("Intel");
-  const isOdd = index % 2 === 1;
-  return !hasHyperthreading || isOdd;
-});
-const amount = cores.length;
+// const cores = os.cpus().filter((cpu, index) => {
+//   const hasHyperthreading = cpu.model.includes("Intel");
+//   const isOdd = index % 2 === 1;
+//   return !hasHyperthreading || isOdd;
+// });
+// const amount = cores.length;
 
-module.exports = amount;
+// module.exports = amount;
 
 // ///// END OF TEST
 
