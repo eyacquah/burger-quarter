@@ -1,0 +1,68 @@
+extends base
+
+block content
+
+    .menu_select.container
+        .row
+            .image_select.col-md-5
+                img.select_image.img-fluid.thumbnail(src=`/img/products/${product.images[0]}` alt=`${product.title}`)
+            .select_info.col-md-7.d-grip.gap-2
+                h2= `${product.title.toUpperCase()}`
+                p.add with a large coke
+                span.fa.fa-star.checked
+                span.fa.fa-star.checked
+                span.fa.fa-star.checked
+                span.fa.fa-star.checked
+                span.fa.fa-star.checked
+                p
+                    | #{product.descrition}
+                .container
+                    .row
+                        .price.col-sm-2
+                            h5
+                                strong Price
+                        .amount.col-sm-10
+                            h5= `GHS ${product.price}`
+                .container
+                    //- .row
+                    //-     .servings.col-sm-2
+                    //-         h5
+                    //-             strong Servings
+                        .number.col-sm-10
+                .d-grid.gap-2
+                    button.btn.addToCart(type='button' data-id=product.id) ADD TO CART
+    hr
+    //- h4 Customer Reviews
+    //- .reviews.container
+    //-     .row
+    //-         .col-md-6
+    //-             .container
+    //-                 .row
+    //-                     .col-sm-3
+    //-                         img.profile.img-fluid(src='/assets/zoee brook profile photo.jpg' alt='')
+    //-                     .col-sm-9
+    //-                         h5
+    //-                             strong Zoe Brook
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star
+    //-                         span.fa.fa-star
+    //-                         p
+    //-                             | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur nostrum eaque odit. Iure provident in ducimus, laborum ut, qui distinctio ex debitis, ea rerum eaque harum reiciendis libero non iste.
+    //-         .col-md-6
+    //-             .container
+    //-                 .row
+    //-                     .col-sm-3
+    //-                         img.profile.img-fluid(src='/assets/michelle zukre profile photo.jpg' alt='')
+    //-                     .col-sm-9
+    //-                         h5
+    //-                             strong Michelle Zukre
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star.checked
+    //-                         span.fa.fa-star
+    //-                         p
+    //-                             | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur nostrum eaque odit. Iure provident in ducimus, laborum ut, qui distinctio ex debitis, ea rerum eaque harum reiciendis libero non iste.
+

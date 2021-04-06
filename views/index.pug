@@ -1,0 +1,65 @@
+extends base
+
+block content
+    .container
+        #myCarousel.carousel.slide(data-ride='carousel')
+            // Indicators
+            ol.carousel-indicators
+                li.active(data-target='#myCarousel' data-slide-to='0')
+                li(data-target='#myCarousel' data-slide-to='1')
+                li(data-target='#myCarousel' data-slide-to='2')
+            // Wrapper for slides
+            .carousel-inner
+                .item.active
+                    img(src='/assets/b1.jpg' alt='Los Angeles' style='width:100%;')
+                    .carousel-caption
+                        h3 Los Angeles
+                        p LA is always so much fun!
+                .item
+                    img(src='/assets/b2.jpg' alt='Chicago' style='width:100%;')
+                    .carousel-caption
+                        h3 Chicago
+                        p Thank you, Chicago!
+                .item
+                    img(src='/assets/greek and scilian mix pizza.jpg' alt='New York' style='width:100%;')
+                    .carousel-caption
+                        h3 New York
+                        p We love the Big Apple!
+            // Left and right controls
+            a.left.carousel-control(href='#myCarousel' data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left
+                span.sr-only Previous
+            a.right.carousel-control(href='#myCarousel' data-slide='next')
+                span.glyphicon.glyphicon-chevron-right
+                span.sr-only Next
+    hr.hr
+    .break.container
+        .row
+            .col-6
+                img.img-fluid(src='/assets/b8.jpg' alt='')
+            .col-6
+                p
+                    em Serving Your Favourite Sizzlers!
+    hr.hr
+    // NEW RECIPES
+    .menu.container
+        h4
+            strong NEW RECIPES
+        .row
+            each product in products
+                .col-md-4.imgdiv
+                    a(href=`/menu/${product.slug}`)
+                        img.menu_image.img-responsive.thumbnail(src=`/img/products/${product.images[0]}` alt=`${product.title}`)
+                    h5.menu_header
+                        a(href=`/menu/${product.slug}`)= product.title
+                    p= `GHS ${product.price}`
+    // PARALLAX
+    .parallax
+        p.txt1 I'm into fitness…fitness whole burger in my mouth
+    // FOOTER
+    section.section.section--sign-up
+        .section__title
+            h3.section__header
+                | Aren't you hungry??? We bet you are!
+        button.btn.btn--show-modal
+            a.blink(href='menu.html') Get your meal now!

@@ -1,0 +1,51 @@
+.home
+    nav.navbar.navbar-expand-lg.navbar-light.bg-transparent
+        .container-fluid
+            a.navbar-brand(href='/')
+                img.d-inline-block.align-center.img-fluid(src='/assets/BURGER QUARTER.png' alt='' width='50' height='50')
+                |                 BURGER QUARTER
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link.active(aria-current='page' href='/') HOME
+                    li.nav-item
+                        a.nav-link(href='/menu') OUR FOOD
+                    li.nav-item
+                        a.nav-link(href='/reservation') RESERVATIONS
+                    li.nav-item
+                        i.bi.bi-search
+                    li.nav-item
+                        a#cart(href='#')
+                            i.fa.fa-shopping-cart
+                            |  Cart 
+                            span.cartQuantity.badge 3
+    .container.con-cart
+        .shopping-cart
+            .shopping-cart-header
+                //- i.fa.fa-shopping-cart.cart-icon
+                //- span.cartQuantity.badge 3
+                .shopping-cart-total
+                    span.lighter-text Total:
+                    span.cartTotal.main-color-text $2,229.97
+            // end shopping-cart-header
+            ul.shopping-cart-items(data-toggle='dropdown')
+                li.clearfix
+                    img.dimensions.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg' alt='item1')
+                    span.item-name Sony DSC-RX100M III
+                    span.item-price $849.99
+                    span.item-quantity Quantity: 01
+                li.clearfix
+                    img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg' alt='item1')
+                    span.item-name KS Automatic Mechanic...
+                    span.item-price $1,249.99
+                    span.item-quantity Quantity: 01
+                li.clearfix
+                    img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg' alt='item1')
+                    span.item-name Kindle, 6" Glare-Free To...
+                    span.item-price $129.99
+                    span.item-quantity Quantity: 01
+            a.button(href='/checkout') Checkout
+        // end shopping-cart
+        // end container
