@@ -22,3 +22,7 @@ exports.getIndex = catchAsync(async (req, res, next) => {
 exports.getCheckout = (req, res) => {
   res.status(200).render("checkout", { title: "Checkout" });
 };
+
+exports.getReservation = (req, res) => {
+  res.status(200).render("reservation", { title: "Reservation" });
+};

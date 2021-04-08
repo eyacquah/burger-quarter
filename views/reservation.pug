@@ -1,0 +1,36 @@
+extends base
+
+block content
+    .heading
+        h2.txt
+            strong
+                em  RESERVE A TABLE 
+    .res.container
+        .card-deck
+            .card.mb-4
+                img.card-img-top.img-fluid(src='/assets/b2.jpg' alt='Card image cap')
+                .card-body
+                    h4.card-title
+                    form.row.g-3
+                        .col-md-3
+                            label.form-label(for='inputCity')
+                                i.bi.bi-person-fill
+                                |  Name:
+                            input#inputCity.form-control(type='text')
+                        .col-md-3
+                            label.form-label(for='inputCity')
+                                i.bi.bi-clock-fill
+                                |  Time:
+                            input#inputCity.form-control(type='time')
+                        .col-md-3
+                            label.form-label(for='inputZip')
+                                i.bi.bi-calendar-date
+                                |  Date:
+                            input#inputZip.form-control(type='date')
+                        .col-md-3
+                            label.form-label(for='inputZip')
+                                i.bi.bi-people-fill
+                                |  No. of People:
+                            input#inputZip.form-control(type='text')
+                        .d-grid.gap-2.d-md-flex.justify-content-md-end
+                            button.btn.me-md-2(type='button') Book Now
