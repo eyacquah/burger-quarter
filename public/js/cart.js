@@ -1,4 +1,5 @@
 import axios from "axios";
+import { showAlert } from "./alerts";
 
 const cartContainer = document.querySelector(".shopping-cart-items");
 const cartTotalEl = document.querySelector(".cartTotal");
@@ -12,8 +13,8 @@ class Cart {
   }
 
   async addToCart(id) {
+    showAlert("success", "Item added to cart");
     if (this.checkForDuplicates(id)) return this.render();
-
     // Grab item from DB
 
     try {
@@ -33,6 +34,7 @@ class Cart {
   }
 
   render() {
+    // console.log("RENDER", this.items);
     this.total = 0;
     this.itemQuantity = 0;
     cartContainer.innerHTML = "";
@@ -88,14 +90,23 @@ class Cart {
     const removeBtns = document.querySelectorAll(".remove");
 
     removeBtns.forEach((btn) => {
-      btn.addEventListener("click", this.handleRemoval);
-    });
-  }
+      const cart = this;
 
-  handleRemoval(e) {
-    // console.log(e);
-    // console.log(this);
-    // console.log(e.target.dataset.id);
+      btn.addEventListener("click", (e) => {
+        // console.log("CLICKED", e.target.dataset.id);
+        showAlert("danger", "Item removed from cart");
+
+        const clickedItem = cart.items.find(
+          (item) => item._id === e.target.dataset.id
+        );
+        cart.items.pop(clickedItem);
+
+        // console.log("REMOVE FUNC", cart.items);
+        cart.render();
+
+        localStorage.setItem("items", JSON.stringify(cart.items));
+      });
+    });
   }
 }
 

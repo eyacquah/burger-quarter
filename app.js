@@ -29,19 +29,6 @@ app.set("views", path.join(__dirname, "views"));
 // Serving static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// //// TEST NEW SETTINGS
-
-// const cores = os.cpus().filter((cpu, index) => {
-//   const hasHyperthreading = cpu.model.includes("Intel");
-//   const isOdd = index % 2 === 1;
-//   return !hasHyperthreading || isOdd;
-// });
-// const amount = cores.length;
-
-// module.exports = amount;
-
-// ///// END OF TEST
-
 //  SET HTTP HEADERS
 app.use(
   helmet({
